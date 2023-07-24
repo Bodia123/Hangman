@@ -1,0 +1,8 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+.image {
+  width: 80px;
+  height: 150px;
+}

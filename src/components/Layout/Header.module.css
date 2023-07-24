@@ -1,0 +1,21 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.linkList {
+  margin-right: auto;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:not(:last-child) {
+  margin-right: 20px;
+}
+@media (min-width: 778px) {
+  .linkList {
+    margin-right: 50px;
+  }
+}

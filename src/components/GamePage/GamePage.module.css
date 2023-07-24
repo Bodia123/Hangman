@@ -1,0 +1,47 @@
+.gameContainer {
+  margin-top: 20px;
+}
+
+.wordSection {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+.forGame:not(:last-child) {
+  margin-right: 10px;
+}
+
+.keyboardSection {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.letterList {
+  display: inline-block;
+  margin: 0;
+
+  padding: 0;
+  list-style: none;
+}
+
+.letter {
+  text-align: center;
+  display: inline-block;
+  width: 25px;
+  margin-bottom: 5px;
+  margin-right: 2px;
+  border: 1px solid tomato;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.activeLetter {
+  text-align: center;
+  display: inline-block;
+  width: 25px;
+  margin-bottom: 5px;
+  margin-right: 2px;
+  border: 1px solid tomato;
+  border-radius: 50%;
+  background-color: blueviolet;
+  pointer-events: none;
+}

@@ -1,0 +1,12 @@
+.startContainer {
+  margin-top: 50px;
+  text-align: center;
+}
+.startTitle {
+  text-transform: uppercase;
+}
+.link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
