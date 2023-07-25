@@ -1,5 +1,34 @@
-const words = ['ДВИГУН', 'АВТОМОБІЛЬ', 'БЛОГЕР', 'ТЕЛЕФОН', 'КЕТЧУП'];
+const words = [
+  'ДВИГУН',
+  'АВТОМОБІЛЬ',
+  'БЛОГЕР',
+  'ТЕЛЕФОН',
+  'КЕТЧУП',
+  'хлопець',
+  ' дядько',
+  ' бабуся',
+  ' дочка',
+  ' дитя',
+  ' мандрівник',
+  ' інженер',
+  ' професор',
+  ' балерина',
+  ' Микола',
+  ' лось',
+  ' сарна',
+  ' корова',
+  ' вівця',
+  ' Рябко',
+  ' Мурчик',
+  ' журавель',
+  ' чапля',
+  ' півень',
+  ' індик',
+  ' качка',
+  ' синиця',
+  ' снігур',
+];
 const randomUkranianWord = () => {
-  return words[Math.floor(Math.random() * words.length)].toUpperCase();
+  return words[Math.floor(Math.random() * words.length)].toUpperCase().trim();
 };
 export default randomUkranianWord;

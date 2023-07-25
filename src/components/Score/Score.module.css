@@ -12,3 +12,11 @@
 
   text-transform: uppercase;
 }
+.scoreContainer > button {
+  margin-top: 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: inherit;
+  font-size: 25px;
+  color: #000;
+}
