@@ -9,6 +9,7 @@ function UaKeyboard({ gameWord }) {
   const letterHandleClick = e => {
     const wordArr = gameWord.toUpperCase().split('');
     const currentLetter = e.currentTarget.textContent;
+    e.currentTarget.className = 'activeLetter';
 
     if (!wordArr.includes(currentLetter)) {
       dispatch(change());
@@ -16,7 +17,6 @@ function UaKeyboard({ gameWord }) {
     }
 
     dispatch(changeLetter(currentLetter));
-    return (e.currentTarget.className = 'activeLetter');
   };
   return (
     <>

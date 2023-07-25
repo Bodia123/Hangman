@@ -6,7 +6,8 @@ import UaKeyboard from './UaKeyboard';
 import randomUkranianWord from 'Js/SelectWord/Ukraine/ukranianWord';
 import { generate } from 'Js/Redux/GenerateWordSlice';
 import { reset } from 'Js/Redux/resultSlice';
-import { cleanLetters } from 'Js/Redux/SelectLetterSlice';
+import { changeLetter, cleanLetters } from 'Js/Redux/SelectLetterSlice';
+import { win, lose } from 'Js/Redux/ScoreSlice';
 
 function UaGame() {
   const dispatch = useDispatch();
@@ -24,35 +25,72 @@ function UaGame() {
 
   return (
     <>
-      {resultGame > 4
-        ? 'you lose'
-        : word && (
-            <div className={css.gameContainer}>
-              <PhotoContainer result={resultGame} />
-              <div className={css.wordSection}>
-                {word.split('').map((letter, index) => {
-                  if (
-                    word.split('').every(item => stateLetter.includes(item))
-                  ) {
-                    newGameHandler();
-                  }
-                  if (stateLetter.includes(letter)) {
-                    return (
-                      <div key={index} className={css.forGame}>
-                        {letter}
-                      </div>
-                    );
-                  }
-                  return (
-                    <div key={index} className={css.forGame}>
-                      _
-                    </div>
-                  );
-                })}
-              </div>
-              <UaKeyboard gameWord={word} />
-            </div>
-          )}
+      {resultGame > 4 ? (
+        <div className={css.loseContainer}>
+          <p className={css.loseText}>Ви програли!!!</p>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch(lose());
+              newGameHandler();
+            }}
+          >
+            Зіграти знову!
+          </button>
+        </div>
+      ) : resultGame <= 4 &&
+        word.split('').every(item => stateLetter.includes(item)) ? (
+        <div className={css.winnerContainer}>
+          <p className={css.winnerText}>Вітаю, ви перемогли!!!</p>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch(win());
+              newGameHandler();
+            }}
+          >
+            Зіграти знову!
+          </button>
+        </div>
+      ) : (
+        <div className={css.gameContainer}>
+          <PhotoContainer result={resultGame} />
+          <div className={css.wordSection}>
+            {word.split('').map((letter, index) => {
+              if (stateLetter.includes(letter)) {
+                return (
+                  <div key={index} className={css.forGame}>
+                    {letter}
+                  </div>
+                );
+              }
+              if (index === 0) {
+                dispatch(changeLetter(letter));
+                return (
+                  <div key={index} className={css.forGame}>
+                    {letter}
+                  </div>
+                );
+              }
+              if (index === word.split('').length - 1) {
+                dispatch(changeLetter(letter));
+
+                return (
+                  <div key={index} className={css.forGame}>
+                    {letter}
+                  </div>
+                );
+              }
+              return (
+                <div key={index} className={css.forGame}>
+                  _
+                </div>
+              );
+            })}
+          </div>
+          <UaKeyboard gameWord={word} />
+        </div>
+      )}
     </>
   );
 }
