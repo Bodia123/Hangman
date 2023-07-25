@@ -45,3 +45,25 @@
   background-color: blueviolet;
   pointer-events: none;
 }
+
+.loseContainer {
+  text-align: center;
+}
+.winnerContainer {
+  text-align: center;
+}
+.winnerText,
+.loseText {
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.winnerContainer > button,
+.loseContainer > button {
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+  background-color: initial;
+  border: 2px solid red;
+}

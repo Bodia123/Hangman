@@ -1,0 +1,14 @@
+.scoreContainer {
+  margin-top: 50px;
+  text-align: center;
+}
+.scoreContainer span {
+  margin-top: 10px;
+  color: orange;
+}
+.scoreContainer > p {
+  margin: 0;
+  padding: 0;
+
+  text-transform: uppercase;
+}

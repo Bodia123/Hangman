@@ -19,3 +19,12 @@
     margin-right: 50px;
   }
 }
+.headerContainer > button {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  text-transform: uppercase;
+  font-style: italic;
+  color: black;
+  font-size: 10px;
+}
