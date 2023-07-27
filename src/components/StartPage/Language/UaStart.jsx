@@ -16,9 +16,9 @@ function UaStart() {
   };
   return (
     <div className={css.startContainer}>
-      <h2 className={css.startTitle}>Гра висельниця</h2>
+      <h2 className={css.startTitle}>Гра шибениця</h2>
       <NavLink to={'/game'} className={css.link} onClick={newGameHandler}>
-        Почату гру!
+        Почати гру!
       </NavLink>
     </div>
   );
